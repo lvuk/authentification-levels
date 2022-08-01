@@ -30,7 +30,7 @@ const userSchema = new mongoose.Schema({
 
 const secret = 'Thisisourlittlesecret.';
 userSchema.plugin(encrypt, {
-  secret: secret,
+  secret: process.env.SECRET,
   excludeFromEncryption: ['email'],
 });
 
